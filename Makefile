@@ -1,21 +1,21 @@
 HOSTCC := clang
-CC=sdcc
-IHX2SMS=ihx2sms
-DEVKITSMS_BASE=../devkitSMS-1.2
-SMSLIB_BASE=$(DEVKITSMS_BASE)/SMSlib
-SMSLIB_INCDIR=$(SMSLIB_BASE)/src
-PEEP_RULES=$(SMSLIB_BASE)/src/peep-rules.txt
-CRT0=$(DEVKITSMS_BASE)/crt0/crt0_sms.rel
-SMSLIB_LIB:=$(SMSLIB_BASE)/src/SMSlib.lib
-I2S    := $(DEVKITSMS_BASE)/ihx2sms/ihx2sms
-I2S_SRC:= $(DEVKITSMS_BASE)/ihx2sms/src/ihx2sms.c
+CC := sdcc
+IHX2SMS := ihx2sms
+DEVKITSMS_BASE := ../devkitSMS-1.2
+SMSLIB_BASE := $(DEVKITSMS_BASE)/SMSlib
+SMSLIB_INCDIR := $(SMSLIB_BASE)/src
+PEEP_RULES := $(SMSLIB_BASE)/src/peep-rules.txt
+CRT0 := $(DEVKITSMS_BASE)/crt0/crt0_sms.rel
+SMSLIB_LIB := $(SMSLIB_BASE)/src/SMSlib.lib
+I2S := $(DEVKITSMS_BASE)/ihx2sms/ihx2sms
+I2S_SRC := $(DEVKITSMS_BASE)/ihx2sms/src/ihx2sms.c
 
-CFLAGS=-mz80 -I$(SMSLIB_INCDIR) --peep-file $(PEEP_RULES)
-LDFLAGS=-mz80 --no-std-crt0 --data-loc 0xC000
+CFLAGS := -mz80 -I$(SMSLIB_INCDIR) --peep-file $(PEEP_RULES)
+LDFLAGS := -mz80 --no-std-crt0 --data-loc 0xC000
 
-PROGNAME=hello_world
+PROGNAME := hello_world
 
-OBJS=src/main.rel
+OBJS := src/main.rel
 
 all: $(PROGNAME).sms
 
